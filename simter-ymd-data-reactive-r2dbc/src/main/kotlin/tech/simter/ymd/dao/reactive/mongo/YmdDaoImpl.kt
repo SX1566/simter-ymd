@@ -22,10 +22,7 @@ class YmdDaoImpl @Autowired constructor(
   private val repository: YmdReactiveRepository
 ) : YmdDao {
   override fun save(vararg ymd: Ymd): Mono<Void> {
-    return if (ymd.isEmpty()) Mono.empty()
-    else repository.saveAll(ymd.asIterable())
-      .doOnNext { println("----$it") }
-      .then()
+    TODO("not implemented")
   }
 
   override fun findYears(type: String): Flux<Year> {
